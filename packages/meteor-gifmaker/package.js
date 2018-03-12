@@ -23,4 +23,11 @@ Package.onUse(function(api) {
   api.addFiles('client/submit_file.js', 'client');
 });
 
+Package.onTest(function (api) {
+  api.use('practicalmeteor:mocha');
+
+  // Add any files with mocha tests.
+  // api.addFiles('mocha-tests.js');
+});
+
 

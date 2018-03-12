@@ -38,7 +38,9 @@ In a terminal window, go to the project directory & run the command:
  ```curl https://install.meteor.com/ | sh```
 
 ## 4. Testing <a name="testing"></a>
-* TBD
+Testing added to the project with: 
+- [Meteor Mocha](https://github.com/practicalmeteor/meteor-mocha)
+- Additional testing TBD
 
 
 ## 5. Code style <a name="code-style"></a>

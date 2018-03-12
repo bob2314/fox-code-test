@@ -11,3 +11,4 @@ meteor-gifmaker
 cfs:standard-packages
 cfs:gridfs
 raix:ui-dropped-event
+practicalmeteor:mocha
