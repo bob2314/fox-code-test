@@ -1,0 +1,84 @@
+<body class="bg-light">
+    <div class="container">
+
+        <div class="py-5 text-center">
+            <h2>GIF Maker Test</h2>    
+            <!-- Drag & Drop Area -->
+            <div class="row">
+                <div class="col-md-6 mb-6">
+                    <div id="dropArea" class="drop-zone" ondrop="{this.style.backgroundColor = '#002D5B'}" ondragover="{this.style.backgroundColor = '#2C455E'}">
+                        <div id="dropDiv">
+                        <span id="drag-text">Drag and Drop here</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row">
+            <!-- Image Preview Area -->
+            <div class="col-md-4 order-md-2 mb-4">
+                <div class="row">
+                    <div class="mb-3 image-preview">
+                        <h4 class="align-items-center mb-3">
+                            Preview
+                        </h4>
+                        <section class="gifshot-image-preview-section">
+                            <div id="displayGIF" data-toggle="tooltip" data-placement="right" title="click to download"></div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!-- Image Upload Area - GifMakers -->
+            <div class="col-md-8 order-md-1 controls-section">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h4 class="align-items-center mb-3">
+                            Select Images
+                        </h4>
+                        <div class="gifmakers">
+                            {{> gifmaker }} {{> gifmaker }} {{> gifmaker }} {{> gifmaker }} {{> gifmaker }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h4 class="align-items-center mb-3">
+                            Speed
+                        </h4>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Interval</span>
+                            </div>
+                            <input type="number" class="form-control" name="interval" id="interval" value=".500" step=".1" size="5">
+                            <div class="input-group-append">
+                                <span class="input-group-text">Seconds</span>
+                            </div>
+                        </div>
+                        <div>
+                            {{> submit}} {{> clearall}}
+                        </div>         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Templates -->
+<template name="gifmaker">
+    <div class="box">
+        <input type="file" name="image" id="upload-image" class="btn btn-info" />
+    </div>
+</template>
+
+<template name="submit">
+    <button disabled={{disabled}} id="submit-button" class="btn btn-large btn-primary" role="button">Create Gif</button>
+</template>
+
+<template name="clearall">
+    <button disabled={{disabled}} id="clear-button" class="btn btn-large btn-primary" role="button">Reset</button>
+</template>
+
+<template name="counter">
+    <div>
+        <h5>{{count}} Images</h5>
+    </div>
+</template>
